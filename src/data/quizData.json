@@ -1,1 +1,410 @@
-{"locale": "th", "status": "draft_for_review", "sourceFilename": "Document1(2).docx", "questions": [{"id": "q01", "question": "การนวดไทยได้รับการขึ้นทะเบียนจาก UNESCO ในปีใด?", "choices": [{"id": "a", "text": "พ.ศ. 2561"}, {"id": "b", "text": "พ.ศ. 2562"}, {"id": "c", "text": "พ.ศ. 2566"}], "correctChoiceId": "b", "explanation": "เอกสารระบุวันที่ 12 ธันวาคม พ.ศ. 2562", "sourceParagraphIndex": 5, "relatedTopicKey": "unesco"}, {"id": "q02", "question": "พิพิธภัณฑ์นวดไทยที่กล่าวถึงในเอกสารตั้งอยู่ภายในวัดใด?", "choices": [{"id": "a", "text": "วัดราชโอรสาราม"}, {"id": "b", "text": "วัดสุวรรณาราม"}, {"id": "c", "text": "วัดโพธิ์"}], "correctChoiceId": "c", "explanation": "เอกสารระบุว่าพิพิธภัณฑ์อยู่ภายในวัดโพธิ์ กรุงเทพฯ", "sourceParagraphIndex": 1, "relatedTopicKey": "wat-pho"}, {"id": "q03", "question": "สื่อความรู้ในเอกสารกล่าวถึงเส้นประธานของการนวดไทยจำนวนกี่เส้น?", "choices": [{"id": "a", "text": "10 เส้น"}, {"id": "b", "text": "21 เส้น"}, {"id": "c", "text": "29 เส้น"}], "correctChoiceId": "a", "explanation": "เอกสารระบุว่าเป็นเส้นทั้ง 10 และแสดงแผนหงายกับแผนคว่ำ", "sourceParagraphIndex": 12, "relatedTopicKey": "sen-sip"}, {"id": "q04", "question": "คัมภีร์แผนนวดในตำราเวชศาสตร์ฉบับหลวง สมัยรัชกาลที่ 5 มีแผนนวดทั้งหมดกี่ภาพ?", "choices": [{"id": "a", "text": "8 ภาพ"}, {"id": "b", "text": "21 ภาพ"}, {"id": "c", "text": "29 ภาพ"}], "correctChoiceId": "c", "explanation": "เอกสารระบุ 29 ภาพ แบ่งเป็นแผนหงาย 21 ภาพ และแผนคว่ำ 8 ภาพ", "sourceParagraphIndex": 14, "relatedTopicKey": "medical-manuscripts"}]}
+{
+  "locales": {
+    "th": {
+      "locale": "th",
+      "sourceFilename": "Document1(2).docx",
+      "questions": [
+        {
+          "id": "q01",
+          "question": "การนวดไทยได้รับการขึ้นทะเบียนจาก UNESCO ในปีใด?",
+          "choices": [
+            { "id": "a", "text": "พ.ศ. 2561" },
+            { "id": "b", "text": "พ.ศ. 2562" },
+            { "id": "c", "text": "พ.ศ. 2566" }
+          ],
+          "correctChoiceId": "b",
+          "explanation": "เอกสารระบุวันที่ 12 ธันวาคม พ.ศ. 2562",
+          "sourceParagraphIndex": 5,
+          "relatedTopicKey": "unesco"
+        },
+        {
+          "id": "q02",
+          "question": "พิพิธภัณฑ์นวดไทยที่กล่าวถึงในเอกสารตั้งอยู่ภายในวัดใด?",
+          "choices": [
+            { "id": "a", "text": "วัดราชโอรสาราม" },
+            { "id": "b", "text": "วัดสุวรรณาราม" },
+            { "id": "c", "text": "วัดโพธิ์" }
+          ],
+          "correctChoiceId": "c",
+          "explanation": "เอกสารระบุว่าพิพิธภัณฑ์อยู่ภายในวัดโพธิ์ กรุงเทพฯ",
+          "sourceParagraphIndex": 1,
+          "relatedTopicKey": "wat-pho"
+        },
+        {
+          "id": "q03",
+          "question": "สื่อความรู้ในเอกสารกล่าวถึงเส้นประธานของการนวดไทยจำนวนกี่เส้น?",
+          "choices": [
+            { "id": "a", "text": "10 เส้น" },
+            { "id": "b", "text": "21 เส้น" },
+            { "id": "c", "text": "29 เส้น" }
+          ],
+          "correctChoiceId": "a",
+          "explanation": "เอกสารระบุว่าเป็นเส้นทั้ง 10 และแสดงแผนหงายกับแผนคว่ำ",
+          "sourceParagraphIndex": 12,
+          "relatedTopicKey": "sen-sip"
+        },
+        {
+          "id": "q04",
+          "question": "คัมภีร์แผนนวดในตำราเวชศาสตร์ฉบับหลวง สมัยรัชกาลที่ 5 มีแผนนวดทั้งหมดกี่ภาพ?",
+          "choices": [
+            { "id": "a", "text": "8 ภาพ" },
+            { "id": "b", "text": "21 ภาพ" },
+            { "id": "c", "text": "29 ภาพ" }
+          ],
+          "correctChoiceId": "c",
+          "explanation": "เอกสารระบุ 29 ภาพ แบ่งเป็นแผนหงาย 21 ภาพ และแผนคว่ำ 8 ภาพ",
+          "sourceParagraphIndex": 14,
+          "relatedTopicKey": "medical-manuscripts"
+        }
+      ]
+    },
+    "en": {
+      "locale": "en",
+      "sourceFilename": "Thai_Massage_Museum_English(1).docx",
+      "questions": [
+        {
+          "id": "q01",
+          "question": "In what year was Thai massage inscribed by UNESCO?",
+          "choices": [
+            { "id": "a", "text": "2018" },
+            { "id": "b", "text": "2019" },
+            { "id": "c", "text": "2023" }
+          ],
+          "correctChoiceId": "b",
+          "explanation": "The source document states 12 December 2019.",
+          "sourceParagraphIndex": 5,
+          "relatedTopicKey": "unesco"
+        },
+        {
+          "id": "q02",
+          "question": "Inside which temple is the Thai Massage Museum located?",
+          "choices": [
+            { "id": "a", "text": "Wat Ratcha-orasaram" },
+            { "id": "b", "text": "Wat Suwannaram" },
+            { "id": "c", "text": "Wat Pho" }
+          ],
+          "correctChoiceId": "c",
+          "explanation": "The document states the museum is inside Wat Pho in Bangkok.",
+          "sourceParagraphIndex": 1,
+          "relatedTopicKey": "wat-pho"
+        },
+        {
+          "id": "q03",
+          "question": "How many principal lines (Sen Sip) are presented in the educational displays?",
+          "choices": [
+            { "id": "a", "text": "10 lines" },
+            { "id": "b", "text": "21 lines" },
+            { "id": "c", "text": "29 lines" }
+          ],
+          "correctChoiceId": "a",
+          "explanation": "The document describes ten principal lines (Sen Sip) in face-up and face-down diagrams.",
+          "sourceParagraphIndex": 12,
+          "relatedTopicKey": "sen-sip"
+        },
+        {
+          "id": "q04",
+          "question": "How many illustrations are in the royal medical treatise massage diagrams from the reign of King Rama V?",
+          "choices": [
+            { "id": "a", "text": "8 illustrations" },
+            { "id": "b", "text": "21 illustrations" },
+            { "id": "c", "text": "29 illustrations" }
+          ],
+          "correctChoiceId": "c",
+          "explanation": "The document specifies 29 illustrations: 21 face up and 8 face down.",
+          "sourceParagraphIndex": 14,
+          "relatedTopicKey": "medical-manuscripts"
+        }
+      ]
+    },
+    "zh": {
+      "locale": "zh",
+      "sourceFilename": "Thai_Massage_Museum_Chinese(2).docx",
+      "questions": [
+        {
+          "id": "q01",
+          "question": "泰式按摩在哪一年被联合国教科文组织（UNESCO）列入名录？",
+          "choices": [
+            { "id": "a", "text": "2018年" },
+            { "id": "b", "text": "2019年" },
+            { "id": "c", "text": "2023年" }
+          ],
+          "correctChoiceId": "b",
+          "explanation": "原文记载日期为 2019年12月12日。",
+          "sourceParagraphIndex": 5,
+          "relatedTopicKey": "unesco"
+        },
+        {
+          "id": "q02",
+          "question": "文中提到的泰式按摩博物馆位于哪座寺庙内？",
+          "choices": [
+            { "id": "a", "text": "拉差欧拉萨兰寺" },
+            { "id": "b", "text": "素万那兰寺" },
+            { "id": "c", "text": "卧佛寺（Wat Pho）" }
+          ],
+          "correctChoiceId": "c",
+          "explanation": "原文说明该博物馆位于曼谷卧佛寺内。",
+          "sourceParagraphIndex": 1,
+          "relatedTopicKey": "wat-pho"
+        },
+        {
+          "id": "q03",
+          "question": "馆内教学资料介绍了泰式按摩的多少条主要经络？",
+          "choices": [
+            { "id": "a", "text": "10条" },
+            { "id": "b", "text": "21条" },
+            { "id": "c", "text": "29条" }
+          ],
+          "correctChoiceId": "a",
+          "explanation": "原文说明为十大主要经络（Sen Sip），包含仰卧和俯卧姿势图。",
+          "sourceParagraphIndex": 12,
+          "relatedTopicKey": "sen-sip"
+        },
+        {
+          "id": "q04",
+          "question": "拉玛五世时期皇家医书中的按摩图谱共有多少幅图？",
+          "choices": [
+            { "id": "a", "text": "8幅" },
+            { "id": "b", "text": "21幅" },
+            { "id": "c", "text": "29幅" }
+          ],
+          "correctChoiceId": "c",
+          "explanation": "原文记载共有29幅图，其中仰卧图21幅、俯卧图8幅。",
+          "sourceParagraphIndex": 14,
+          "relatedTopicKey": "medical-manuscripts"
+        }
+      ]
+    },
+    "ru": {
+      "locale": "ru",
+      "sourceFilename": "Thai_Massage_Museum_Russian(2).docx",
+      "questions": [
+        {
+          "id": "q01",
+          "question": "В каком году тайский массаж был включён в список ЮНЕСКО (UNESCO)?",
+          "choices": [
+            { "id": "a", "text": "2018 год" },
+            { "id": "b", "text": "2019 год" },
+            { "id": "c", "text": "2023 год" }
+          ],
+          "correctChoiceId": "b",
+          "explanation": "В документе указана дата 12 декабря 2019 года.",
+          "sourceParagraphIndex": 5,
+          "relatedTopicKey": "unesco"
+        },
+        {
+          "id": "q02",
+          "question": "На территории какого храма расположен Музей тайского массажа?",
+          "choices": [
+            { "id": "a", "text": "Ват Ратчаорасарам" },
+            { "id": "b", "text": "Ват Суваннарам" },
+            { "id": "c", "text": "Ват Пхо" }
+          ],
+          "correctChoiceId": "c",
+          "explanation": "В документе указано, что музей находится в храме Ват Пхо в Бангкоке.",
+          "sourceParagraphIndex": 1,
+          "relatedTopicKey": "wat-pho"
+        },
+        {
+          "id": "q03",
+          "question": "Сколько главных энергетических линий («сен сип») представлено в образовательных материалах?",
+          "choices": [
+            { "id": "a", "text": "10 линий" },
+            { "id": "b", "text": "21 линия" },
+            { "id": "c", "text": "29 линий" }
+          ],
+          "correctChoiceId": "a",
+          "explanation": "В материале указаны десять главных линий «сен сип» со схемами на спине и на животе.",
+          "sourceParagraphIndex": 12,
+          "relatedTopicKey": "sen-sip"
+        },
+        {
+          "id": "q04",
+          "question": "Сколько иллюстраций содержится в сборнике схем массажа из королевского трактата эпохи Рамы V?",
+          "choices": [
+            { "id": "a", "text": "8 иллюстраций" },
+            { "id": "b", "text": "21 иллюстрация" },
+            { "id": "c", "text": "29 иллюстраций" }
+          ],
+          "correctChoiceId": "c",
+          "explanation": "В документе указано 29 иллюстраций: 21 схема лёжа на спине и 8 — лёжа на животе.",
+          "sourceParagraphIndex": 14,
+          "relatedTopicKey": "medical-manuscripts"
+        }
+      ]
+    },
+    "hi": {
+      "locale": "hi",
+      "sourceFilename": "Thai_Massage_Museum_Hindi(2).docx",
+      "questions": [
+        {
+          "id": "q01",
+          "question": "यूनेस्को (UNESCO) द्वारा पारंपरिक थाई मालिश को किस वर्ष सूची में शामिल किया गया?",
+          "choices": [
+            { "id": "a", "text": "वर्ष 2018" },
+            { "id": "b", "text": "वर्ष 2019" },
+            { "id": "c", "text": "वर्ष 2023" }
+          ],
+          "correctChoiceId": "b",
+          "explanation": "दस्तावेज़ में 12 दिसंबर 2019 की तिथि उल्लिखित है।",
+          "sourceParagraphIndex": 5,
+          "relatedTopicKey": "unesco"
+        },
+        {
+          "id": "q02",
+          "question": "दस्तावेज़ में उल्लिखित थाई मालिश संग्रहालय किस मंदिर परिसर में स्थित है?",
+          "choices": [
+            { "id": "a", "text": "वाट रत्चाओरासाराम" },
+            { "id": "b", "text": "वाट सुवन्नाराम" },
+            { "id": "c", "text": "वाट फो" }
+          ],
+          "correctChoiceId": "c",
+          "explanation": "दस्तावेज़ के अनुसार यह संग्रहालय बैंकॉक के वाट फो में स्थित है।",
+          "sourceParagraphIndex": 1,
+          "relatedTopicKey": "wat-pho"
+        },
+        {
+          "id": "q03",
+          "question": "शैक्षिक सामग्री में थाई मालिश की कितनी प्रमुख ऊर्जा-रेखाओं (‘सेन सिप’) का वर्णन है?",
+          "choices": [
+            { "id": "a", "text": "10 रेखाएँ" },
+            { "id": "b", "text": "21 रेखाएँ" },
+            { "id": "c", "text": "29 रेखाएँ" }
+          ],
+          "correctChoiceId": "a",
+          "explanation": "दस्तावेज़ में दस प्रमुख ऊर्जा-रेखाओं तथा पीठ व पेट के बल लेटने के आरेखों का उल्लेख है।",
+          "sourceParagraphIndex": 12,
+          "relatedTopicKey": "sen-sip"
+        },
+        {
+          "id": "q04",
+          "question": "राजा राम पंचम के काल के शाही चिकित्सा ग्रंथ में मालिश संबंधी कुल कितने चित्र हैं?",
+          "choices": [
+            { "id": "a", "text": "8 चित्र" },
+            { "id": "b", "text": "21 चित्र" },
+            { "id": "c", "text": "29 चित्र" }
+          ],
+          "correctChoiceId": "c",
+          "explanation": "दस्तावेज़ में कुल 29 चित्र बताए गए हैं: 21 पीठ के बल और 8 पेट के बल लेटने की स्थिति के।",
+          "sourceParagraphIndex": 14,
+          "relatedTopicKey": "medical-manuscripts"
+        }
+      ]
+    },
+    "ms": {
+      "locale": "ms",
+      "sourceFilename": "Thai_Massage_Museum_Malay(2).docx",
+      "questions": [
+        {
+          "id": "q01",
+          "question": "Pada tahun bilakah urutan tradisional Thai didaftarkan oleh UNESCO?",
+          "choices": [
+            { "id": "a", "text": "Tahun 2018" },
+            { "id": "b", "text": "Tahun 2019" },
+            { "id": "c", "text": "Tahun 2023" }
+          ],
+          "correctChoiceId": "b",
+          "explanation": "Dokumen sumber menyatakan tarikh 12 Disember 2019.",
+          "sourceParagraphIndex": 5,
+          "relatedTopicKey": "unesco"
+        },
+        {
+          "id": "q02",
+          "question": "Di dalam kuil manakah terletaknya Muzium Urutan Thai?",
+          "choices": [
+            { "id": "a", "text": "Wat Ratcha-orasaram" },
+            { "id": "b", "text": "Wat Suwannaram" },
+            { "id": "c", "text": "Wat Pho" }
+          ],
+          "correctChoiceId": "c",
+          "explanation": "Dokumen menyatakan muzium ini terletak di dalam Wat Pho, Bangkok.",
+          "sourceParagraphIndex": 1,
+          "relatedTopicKey": "wat-pho"
+        },
+        {
+          "id": "q03",
+          "question": "Berapakah bilangan laluan tenaga utama (Sen Sip) yang diterangkan dalam bahan pendidikan?",
+          "choices": [
+            { "id": "a", "text": "10 laluan" },
+            { "id": "b", "text": "21 laluan" },
+            { "id": "c", "text": "29 laluan" }
+          ],
+          "correctChoiceId": "a",
+          "explanation": "Dokumen menyatakan sepuluh laluan tenaga utama (Sen Sip) dengan rajah telentang dan meniarap.",
+          "sourceParagraphIndex": 12,
+          "relatedTopicKey": "sen-sip"
+        },
+        {
+          "id": "q04",
+          "question": "Berapakah jumlah ilustrasi dalam kitab rajah urutan naskhah perubatan diraja zaman Raja Rama V?",
+          "choices": [
+            { "id": "a", "text": "8 ilustrasi" },
+            { "id": "b", "text": "21 ilustrasi" },
+            { "id": "c", "text": "29 ilustrasi" }
+          ],
+          "correctChoiceId": "c",
+          "explanation": "Dokumen menyatakan 29 ilustrasi: 21 rajah telentang dan 8 rajah meniarap.",
+          "sourceParagraphIndex": 14,
+          "relatedTopicKey": "medical-manuscripts"
+        }
+      ]
+    },
+    "ko": {
+      "locale": "ko",
+      "sourceFilename": "Thai_Massage_Museum_Korean(2).docx",
+      "questions": [
+        {
+          "id": "q01",
+          "question": "태국 전통 마사지는 몇 년도에 유네스코(UNESCO) 대표목록에 등재되었나요?",
+          "choices": [
+            { "id": "a", "text": "2018년" },
+            { "id": "b", "text": "2019년" },
+            { "id": "c", "text": "2023년" }
+          ],
+          "correctChoiceId": "b",
+          "explanation": "자료에는 2019년 12월 12일로 명시되어 있습니다.",
+          "sourceParagraphIndex": 5,
+          "relatedTopicKey": "unesco"
+        },
+        {
+          "id": "q02",
+          "question": "자료에 소개된 태국 전통 마사지 박물관은 어느 사원 안에 있나요?",
+          "choices": [
+            { "id": "a", "text": "왓 랏차오롯사람" },
+            { "id": "b", "text": "왓 수완나람" },
+            { "id": "c", "text": "왓 포" }
+          ],
+          "correctChoiceId": "c",
+          "explanation": "자료에는 박물관이 방콕의 왓 포 안에 위치한다고 명시되어 있습니다.",
+          "sourceParagraphIndex": 1,
+          "relatedTopicKey": "wat-pho"
+        },
+        {
+          "id": "q03",
+          "question": "교육 자료에서 소개하는 태국 마사지의 주요 에너지 경로 ‘센 십’은 몇 개인가요?",
+          "choices": [
+            { "id": "a", "text": "10개" },
+            { "id": "b", "text": "21개" },
+            { "id": "c", "text": "29개" }
+          ],
+          "correctChoiceId": "a",
+          "explanation": "자료는 바로 누운 자세와 엎드린 자세의 도해와 함께 10대 주요 선(센 십)을 설명합니다.",
+          "sourceParagraphIndex": 12,
+          "relatedTopicKey": "sen-sip"
+        },
+        {
+          "id": "q04",
+          "question": "라마 5세 시대 왕실 의학서에 수록된 마사지 도해집의 그림은 총 몇 개인가요?",
+          "choices": [
+            { "id": "a", "text": "8개" },
+            { "id": "b", "text": "21개" },
+            { "id": "c", "text": "29개" }
+          ],
+          "correctChoiceId": "c",
+          "explanation": "자료에는 총 29개(바로 누운 자세 21개, 엎드린 자세 8개)로 기록되어 있습니다.",
+          "sourceParagraphIndex": 14,
+          "relatedTopicKey": "medical-manuscripts"
+        }
+      ]
+    }
+  }
+}

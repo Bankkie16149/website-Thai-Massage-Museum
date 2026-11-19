@@ -4,23 +4,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        pine: '#0b2526',
-        forest: '#124240',
-        'forest-deep': '#102721',
-        cream: '#f5efe3',
-        pearl: '#fff8eb',
+        crimson: '#23080c',
+        'crimson-mid': '#3a1016',
+        'crimson-deep': '#190609',
+        cream: '#f7efe2',
+        pearl: '#fffaf0',
         gold: '#e6c177',
         'gold-soft': '#e2bd78',
-        ink: '#213831',
-        muted: '#b9c8bb',
-        mint: '#cedfce',
+        ink: '#2d1014',
+        muted: '#d8c2ba',
       },
       fontFamily: {
         sans: ["'Noto Sans Thai'", "'Leelawadee UI'", 'Tahoma', 'Arial', 'sans-serif'],
         serif: ['Georgia', 'serif'],
       },
       boxShadow: {
-        museum: '0 24px 70px rgba(4,18,14,.27)',
+        museum: '0 24px 70px rgba(18, 4, 6, 0.42)',
       },
     },
   },

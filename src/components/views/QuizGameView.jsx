@@ -1,4 +1,5 @@
 import React from 'react';
+import { triggerRipple } from '../../utils/ripple';
 
 export default function QuizGameView({
   locale,
@@ -9,112 +10,102 @@ export default function QuizGameView({
   answered,
   score,
   onBackToGames,
-  onSwitchToThai,
   onStartQuizQuestions,
   onSelectChoice,
   onCheckAnswer,
   onNextQuizQuestion,
   onOpenRelatedTopic,
 }) {
-  const copyLang = locale === 'th' || locale === 'en' ? locale : 'en';
+  const localizedQuiz = quiz.locales[locale] || quiz.locales.en;
+  const questions = localizedQuiz.questions;
 
   const renderShellContent = () => {
-    if (locale !== 'th') {
-      return (
-        <>
-          <div className="text-[#866d48] text-[0.75rem] tracking-[0.12em] font-extrabold uppercase mb-[9px]">
-            THAI ORIGINAL QUIZ
-          </div>
-          <h3 className="text-[1.43rem] leading-[1.48] mt-3 mb-5 font-bold">{t.quizUnavailable}</h3>
-          <p>{t.quizUnavailableDetail}</p>
-          <button
-            type="button"
-            onClick={onSwitchToThai}
-            className="mt-[15px] border border-[#879a80] bg-transparent hover:bg-[#eef3ea] text-[#2a513c] rounded-[12px] py-[9px] px-[17px] font-extrabold min-h-[45px]"
-          >
-            {t.changeThai}
-          </button>
-        </>
-      );
-    }
-
     if (qIndex < 0) {
       return (
-        <>
-          <div className="text-[#866d48] text-[0.75rem] tracking-[0.12em] font-extrabold uppercase mb-[9px]">
-            ORIGINAL QUIZ / DRAFT
+        <div className="passage-reveal">
+          <div className="text-[#854634] text-[0.78rem] tracking-[0.12em] font-extrabold uppercase mb-[9px]" lang={locale}>
+            {t.quizDraftLabel}
           </div>
-          <h3 className="text-[1.43rem] leading-[1.48] mt-3 mb-5 font-bold">
-            4 คำถามจากเนื้อหาพิพิธภัณฑ์
+          <h3 className="text-[1.48rem] leading-[1.45] mt-3 mb-4 font-bold" lang={locale}>
+            {t.quizStartHeading}
           </h3>
-          <p>คำถามชุดเดิมคงไว้ครบทั้ง 4 ข้อ และใช้คำเฉลยจากไฟล์ไทย</p>
+          <p className="text-[#59242b] text-[1.02rem]" lang={locale}>
+            {t.quizStartDesc}
+          </p>
           <button
             type="button"
+            onPointerDown={triggerRipple}
             onClick={onStartQuizQuestions}
-            className="mt-6 min-h-[61px] rounded-[18px] py-[11px] px-[25px] text-[0.96rem] font-extrabold inline-flex gap-[10px] items-center justify-center bg-[#295944] hover:bg-[#204837] text-white"
+            className="relative overflow-hidden mt-7 min-h-[64px] rounded-[18px] py-[12px] px-[28px] text-[1.04rem] font-extrabold inline-flex gap-[10px] items-center justify-center bg-[#63161f] hover:bg-[#7b1d28] active:scale-[0.96] text-white transition-transform"
           >
-            เริ่มเล่นเกมทดลอง →
+            <span lang={locale}>{t.quizStartBtn}</span>
           </button>
-        </>
+        </div>
       );
     }
 
-    if (qIndex >= quiz.questions.length) {
+    if (qIndex >= questions.length) {
       return (
-        <>
-          <div className="text-[#866d48] text-[0.75rem] tracking-[0.12em] font-extrabold uppercase mb-[9px]">
-            QUIZ COMPLETE
+        <div className="passage-reveal">
+          <div className="text-[#854634] text-[0.78rem] tracking-[0.12em] font-extrabold uppercase mb-[9px]" lang={locale}>
+            {t.quizCompleteLabel}
           </div>
-          <h3 className="text-[1.43rem] leading-[1.48] mt-3 mb-5 font-bold">{t.result}</h3>
-          <div className="text-[4.5rem] leading-[1.2] text-[#27563d] font-black mt-[13px] mb-5">
-            {score} / {quiz.questions.length}
+          <h3 className="text-[1.48rem] leading-[1.48] mt-3 mb-4 font-bold" lang={locale}>
+            {t.result}
+          </h3>
+          <div className="score-pop text-[4.6rem] leading-[1.15] text-[#63161f] font-black mt-[10px] mb-5">
+            {score} / {questions.length}
           </div>
-          <p>คำถามและเฉลยอิงข้อความจากไฟล์ไทย · ฉบับร่าง</p>
+          <p className="text-[#59242b]" lang={locale}>
+            {t.quizResultNote}
+          </p>
           <button
             type="button"
+            onPointerDown={triggerRipple}
             onClick={onStartQuizQuestions}
-            className="mt-[22px] min-h-[61px] rounded-[18px] py-[11px] px-[25px] text-[0.96rem] font-extrabold inline-flex gap-[10px] items-center justify-center bg-[#295944] hover:bg-[#204837] text-white"
+            className="relative overflow-hidden mt-[24px] min-h-[64px] rounded-[18px] py-[12px] px-[28px] text-[1.04rem] font-extrabold inline-flex gap-[10px] items-center justify-center bg-[#63161f] hover:bg-[#7b1d28] active:scale-[0.96] text-white transition-transform"
           >
-            {t.retry} ↻
+            <span lang={locale}>{t.retry}</span> ↻
           </button>
-        </>
+        </div>
       );
     }
 
-    const q = quiz.questions[qIndex];
+    const q = questions[qIndex];
     const progressValue = qIndex + (answered ? 1 : 0);
     const matched = q.choices.find((ch) => ch.id === q.correctChoiceId);
     const isCorrect = choice === q.correctChoiceId;
 
     return (
-      <>
-        <div className="text-[#866d48] text-[0.75rem] tracking-[0.12em] font-extrabold uppercase mb-[9px]">
-          {t.number} {qIndex + 1} / {quiz.questions.length}
+      <div key={q.id} className="passage-reveal">
+        <div className="text-[#854634] text-[0.8rem] tracking-[0.12em] font-extrabold uppercase mb-[9px]" lang={locale}>
+          {t.number} {qIndex + 1} / {questions.length}
         </div>
 
         <div
-          className="h-2 bg-[#e8e6d9] rounded-full overflow-hidden mt-[15px] mb-6"
+          className="h-2.5 bg-[#eadfd0] rounded-full overflow-hidden mt-[15px] mb-6"
           role="progressbar"
           aria-valuemin={0}
-          aria-valuemax={quiz.questions.length}
+          aria-valuemax={questions.length}
           aria-valuenow={progressValue}
         >
           <div
-            className="h-full bg-[#47745c] transition-[width] duration-200"
-            style={{ width: `${(progressValue / quiz.questions.length) * 100}%` }}
+            className="h-full bg-[#63161f] transition-[width] duration-300 ease-out"
+            style={{ width: `${(progressValue / questions.length) * 100}%` }}
           />
         </div>
 
-        <h3 id="active-question" className="text-[1.43rem] leading-[1.48] mt-3 mb-5 font-bold">
+        <h3 id="active-question" className="text-[1.45rem] leading-[1.48] mt-3 mb-5 font-bold" lang={locale}>
           {q.question}
         </h3>
 
-        <fieldset className="border-0 p-0 m-0 grid gap-[10px]">
-          <legend className="sr-only">เลือกคำตอบหนึ่งข้อ</legend>
+        <fieldset className="border-0 p-0 m-0 grid gap-[12px]">
+          <legend className="sr-only">{t.chooseOneLegend}</legend>
           {q.choices.map((a) => (
             <label
               key={a.id}
-              className="answer-option flex gap-[13px] items-center py-[14px] px-4 border border-[#bbc7b9] rounded-[14px] cursor-pointer bg-white"
+              onPointerDown={triggerRipple}
+              className="answer-option relative overflow-hidden min-h-[64px] flex gap-[14px] items-center py-[14px] px-5 border-2 border-[#d3beb0] rounded-[16px] cursor-pointer bg-white"
             >
               <input
                 type="radio"
@@ -123,9 +114,11 @@ export default function QuizGameView({
                 checked={choice === a.id}
                 disabled={answered}
                 onChange={() => onSelectChoice(a.id)}
-                className="w-[18px] h-[18px] accent-[#325940] flex-none"
+                className="w-[22px] h-[22px] accent-[#63161f] flex-none"
               />
-              <span>{a.text}</span>
+              <span className="text-[1.04rem] font-semibold" lang={locale}>
+                {a.text}
+              </span>
             </label>
           ))}
         </fieldset>
@@ -133,89 +126,100 @@ export default function QuizGameView({
         {answered && (
           <div
             role="status"
-            className={`p-4 rounded-[14px] mt-4 grid gap-[6px] ${
-              isCorrect ? 'bg-[#e4f0df] text-[#264c35]' : 'bg-[#fbe8d9] text-[#77462c]'
+            lang={locale}
+            className={`passage-reveal p-4 rounded-[16px] mt-4 grid gap-[6px] border ${
+              isCorrect
+                ? 'bg-[#e9f2e6] text-[#1f472d] border-[#a5c69d]'
+                : 'bg-[#fbe4df] text-[#781f26] border-[#dfb0a7]'
             }`}
           >
             <strong>
               {isCorrect ? t.right : t.wrong} · {t.correctAnswer} {matched?.text}
             </strong>
-            <span className="text-[0.92rem]">{q.explanation}</span>
-            <small className="text-[0.76rem]">
-              {t.sourceRef} {q.sourceParagraphIndex + 1}
+            <span className="text-[0.96rem]">{q.explanation}</span>
+            <small className="text-[0.78rem] opacity-85">
+              {t.sourceRef} #{q.sourceParagraphIndex + 1}
             </small>
           </div>
         )}
 
-        <div className="flex gap-[10px] flex-wrap mt-[22px]">
+        <div className="flex gap-[12px] flex-wrap mt-[24px]">
           {!answered ? (
             <button
               type="button"
               disabled={!choice}
+              onPointerDown={triggerRipple}
               onClick={onCheckAnswer}
-              className="min-h-[61px] rounded-[18px] py-[11px] px-[25px] text-[0.96rem] font-extrabold inline-flex gap-[10px] items-center justify-center bg-[#295944] hover:bg-[#204837] text-white"
+              className="relative overflow-hidden min-h-[64px] rounded-[18px] py-[12px] px-[28px] text-[1.02rem] font-extrabold inline-flex gap-[10px] items-center justify-center bg-[#63161f] hover:bg-[#7b1d28] active:scale-[0.96] text-white transition-transform"
             >
-              {t.check}
+              <span lang={locale}>{t.check}</span>
             </button>
           ) : (
             <>
               <button
                 type="button"
+                onPointerDown={triggerRipple}
                 onClick={onNextQuizQuestion}
-                className="min-h-[61px] rounded-[18px] py-[11px] px-[25px] text-[0.96rem] font-extrabold inline-flex gap-[10px] items-center justify-center bg-[#295944] hover:bg-[#204837] text-white"
+                className="relative overflow-hidden min-h-[64px] rounded-[18px] py-[12px] px-[28px] text-[1.02rem] font-extrabold inline-flex gap-[10px] items-center justify-center bg-[#63161f] hover:bg-[#7b1d28] active:scale-[0.96] text-white transition-transform"
               >
-                {qIndex === quiz.questions.length - 1 ? 'ดูผลคะแนน →' : `${t.next} →`}
+                <span lang={locale}>
+                  {qIndex === questions.length - 1 ? `${t.seeScore} →` : `${t.next} →`}
+                </span>
               </button>
               <button
                 type="button"
+                onPointerDown={triggerRipple}
                 onClick={() => onOpenRelatedTopic(q.relatedTopicKey)}
-                className="min-h-[61px] rounded-[18px] py-[11px] px-[25px] text-[0.96rem] font-extrabold inline-flex gap-[10px] items-center justify-center bg-transparent hover:bg-[#e5ebdf] text-[#315544] border border-[#738e78]"
+                className="relative overflow-hidden min-h-[64px] rounded-[18px] py-[12px] px-[24px] text-[0.98rem] font-extrabold inline-flex gap-[10px] items-center justify-center bg-transparent hover:bg-[#f5e7dc] active:scale-[0.96] text-[#59151d] border-2 border-[#a87c71] transition-transform"
               >
-                อ่านเรื่องที่เกี่ยวข้อง ↗
+                <span lang={locale}>{t.relatedReading}</span>
               </button>
             </>
           )}
         </div>
-      </>
+      </div>
     );
   };
 
   return (
     <section
       id="view-quiz"
-      className="pt-[35px] max-[650px]:pt-[10px]"
+      className="pt-[35px] max-[650px]:pt-[10px] select-none"
       aria-labelledby="quiz-view-title"
     >
       <button
         type="button"
+        onPointerDown={triggerRipple}
         onClick={onBackToGames}
-        className="border border-[#ffffff6a] bg-transparent hover:bg-[#ffffff13] text-[var(--cream)] rounded-[14px] py-[9px] px-[16px] min-h-[45px] font-extrabold mb-6"
+        className="relative overflow-hidden border border-[#e6c17777] bg-[#4e141c55] hover:bg-[#6a1b2688] active:scale-[0.96] text-[#fff8ee] rounded-[15px] py-[10px] px-[20px] min-h-[54px] font-extrabold mb-6 transition-transform"
       >
-        ← <span lang={copyLang}>{t.allGames}</span>
+        ← <span lang={locale}>{t.allGames}</span>
       </button>
 
       <div className="grid grid-cols-[minmax(270px,0.77fr)_minmax(420px,1.23fr)] max-[1130px]:grid-cols-[1fr_1.28fr] max-[760px]:grid-cols-1 gap-[clamp(35px,6vw,90px)] max-[1130px]:gap-5 items-start">
         <div>
-          <div className="overline">ORIGINAL MINI QUIZ / 02</div>
-          <h2 id="quiz-view-title" className="mt-[17px] mb-[22px] max-[760px]:text-[2.35rem] font-bold" lang={copyLang}>
+          <div className="overline" lang={locale}>
+            {t.quizGameLabel}
+          </div>
+          <h2 id="quiz-view-title" className="mt-[17px] mb-[22px] max-[760px]:text-[2.35rem] font-bold text-[#fffaf0]" lang={locale}>
             {t.quizTitle}
           </h2>
-          <p className="text-[#d4e0d5] text-[1rem]" lang={copyLang}>
+          <p className="text-[#f0dfd7] text-[1.04rem]" lang={locale}>
             {t.quizSide}
           </p>
           <div className="flex flex-wrap gap-[11px] mt-7">
-            <span className="inline-flex gap-[9px] items-center py-[9px] px-[14px] border border-[var(--stroke)] rounded-[40px] text-[#e6dfce] text-[0.74rem] font-bold bg-[#ffffff07]">
-              <span lang={copyLang}>{t.fourQuestions}</span>
+            <span className="inline-flex gap-[9px] items-center py-[10px] px-[16px] border border-[var(--stroke)] rounded-[40px] text-[#f5e7d9] text-[0.82rem] font-bold bg-[#ffffff0c]">
+              <span lang={locale}>{t.fourQuestions}</span>
             </span>
-            <span className="inline-flex gap-[9px] items-center py-[9px] px-[14px] border border-[var(--stroke)] rounded-[40px] text-[#e6dfce] text-[0.74rem] font-bold bg-[#ffffff07]">
-              ✣ <span lang={copyLang}>{t.sourceGame}</span>
+            <span className="inline-flex gap-[9px] items-center py-[10px] px-[16px] border border-[var(--stroke)] rounded-[40px] text-[#f5e7d9] text-[0.82rem] font-bold bg-[#ffffff0c]">
+              ✣ <span lang={locale}>{t.sourceGame}</span>
             </span>
           </div>
         </div>
 
         <div
           id="quiz-content"
-          className="bg-[#fffaf1] text-[#233e31] rounded-[28px] shadow-museum p-[clamp(20px,3.7vw,42px)] max-[760px]:p-[22px] max-[410px]:p-[17px] min-h-[420px] max-[760px]:min-h-0"
+          className="bg-[#fffaf1] text-[#2d1014] rounded-[28px] shadow-museum p-[clamp(20px,3.7vw,42px)] max-[760px]:p-[22px] max-[410px]:p-[17px] min-h-[420px] max-[760px]:min-h-0"
         >
           {renderShellContent()}
         </div>

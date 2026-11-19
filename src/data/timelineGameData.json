@@ -1,0 +1,282 @@
+{
+  "scoring": {
+    "pointsPerCorrect": 20,
+    "penaltyPerMistake": 5,
+    "minScore": 0
+  },
+  "locales": {
+    "th": {
+      "items": [
+        {
+          "id": "rama1",
+          "order": 1,
+          "era": "สมัยรัชกาลที่ 1",
+          "label": "ตำราโรคนิทานคำฉันท์ 11",
+          "detail": "สมัยรัชกาลที่ 1 (พ.ศ. 2325–2352) — ตำราการแพทย์แผนไทยในรูปแบบคำฉันท์ที่กล่าวถึงสมุฏฐานของโรคและการดูแลรักษา"
+        },
+        {
+          "id": "rama2",
+          "order": 2,
+          "era": "สมัยรัชกาลที่ 2",
+          "label": "จารึกตำรายาวัดราชโอรสาราม",
+          "detail": "สมัยรัชกาลที่ 2 (พ.ศ. 2352–2367) — จารึกตำรับยาและองค์ความรู้การแพทย์แผนไทยบนแผ่นหินภายในวัดราชโอรสาราม"
+        },
+        {
+          "id": "rama3",
+          "order": 3,
+          "era": "สมัยรัชกาลที่ 3",
+          "label": "ศิลาจารึกคัมภีร์แผนนวดวัดโพธิ์",
+          "detail": "สมัยรัชกาลที่ 3 (พ.ศ. 2367–2394) — โปรดเกล้าฯ ให้รวบรวมสรรพวิชาและจารึกคัมภีร์แผนนวดไว้ ณ วัดพระเชตุพนฯ (วัดโพธิ์)"
+        },
+        {
+          "id": "rama5",
+          "order": 4,
+          "era": "สมัยรัชกาลที่ 5",
+          "label": "คัมภีร์แผนนวดตำราเวชศาสตร์ฉบับหลวง",
+          "detail": "สมัยรัชกาลที่ 5 (พ.ศ. 2411–2453) — รวบรวมแผนนวดจำนวน 29 ภาพ (แผนหงาย 21 ภาพ แผนคว่ำ 8 ภาพ) พร้อมคำบรรยายเส้นประธานและลม"
+        },
+        {
+          "id": "unesco",
+          "order": 5,
+          "era": "12 ธันวาคม พ.ศ. 2562",
+          "label": "นวดไทยขึ้นทะเบียน UNESCO",
+          "detail": "12 ธันวาคม พ.ศ. 2562 — นวดไทยได้รับการขึ้นทะเบียนเป็นตัวแทนมรดกภูมิปัญญาทางวัฒนธรรมที่จับต้องไม่ได้ของมนุษยชาติ"
+        }
+      ]
+    },
+    "en": {
+      "items": [
+        {
+          "id": "rama1",
+          "order": 1,
+          "era": "Reign of King Rama I",
+          "label": "Medical text Rok Nithan Kham Chan 11",
+          "detail": "Reign of King Rama I (1782–1809) — Traditional Thai medical treatise written in poetic verse."
+        },
+        {
+          "id": "rama2",
+          "order": 2,
+          "era": "Reign of King Rama II",
+          "label": "Wat Ratcha-orasaram formula inscriptions",
+          "detail": "Reign of King Rama II (1809–1824) — Medicinal formula stone inscriptions preserved at Wat Ratcha-orasaram."
+        },
+        {
+          "id": "rama3",
+          "order": 3,
+          "era": "Reign of King Rama III",
+          "label": "Stone massage inscriptions at Wat Pho",
+          "detail": "Reign of King Rama III (1824–1851) — Royal stone inscriptions of the massage manual at Wat Phra Chetuphon (Wat Pho)."
+        },
+        {
+          "id": "rama5",
+          "order": 4,
+          "era": "Reign of King Rama V",
+          "label": "Royal Medical Treatise massage diagrams",
+          "detail": "Reign of King Rama V (1868–1910) — Royal medical treatise featuring 29 massage illustrations (21 face up, 8 face down)."
+        },
+        {
+          "id": "unesco",
+          "order": 5,
+          "era": "12 December 2019",
+          "label": "Nuad Thai inscribed by UNESCO",
+          "detail": "12 December 2019 — Traditional Thai massage inscribed on UNESCO’s Representative List of the Intangible Cultural Heritage of Humanity."
+        }
+      ]
+    },
+    "zh": {
+      "items": [
+        {
+          "id": "rama1",
+          "order": 1,
+          "era": "拉玛一世时期",
+          "label": "《疾病因缘》十一音节诗体医书",
+          "detail": "拉玛一世时期（1782–1809年）——以十一音节诗体写成的传统泰医学典籍《疾病因缘》。"
+        },
+        {
+          "id": "rama2",
+          "order": 2,
+          "era": "拉玛二世时期",
+          "label": "拉差欧拉萨兰寺药方碑刻",
+          "detail": "拉玛二世时期（1809–1824年）——刻录于拉差欧拉萨兰寺的传统药方石碑文献。"
+        },
+        {
+          "id": "rama3",
+          "order": 3,
+          "era": "拉玛三世时期",
+          "label": "卧佛寺按摩图谱石刻",
+          "detail": "拉玛三世时期（1824–1851年）——汇集并刻录于帕切图蓬寺（卧佛寺）的按摩图谱石刻。"
+        },
+        {
+          "id": "rama5",
+          "order": 4,
+          "era": "拉玛五世时期",
+          "label": "皇家医书按摩图谱（29幅图）",
+          "detail": "拉玛五世时期（1868–1910年）——皇家医书收录29幅按摩图谱（仰卧21幅、俯卧8幅）并附经络与“风”说明。"
+        },
+        {
+          "id": "unesco",
+          "order": 5,
+          "era": "2019年12月12日",
+          "label": "泰式按摩列入 UNESCO 名录",
+          "detail": "2019年12月12日——泰式按摩被联合国教科文组织（UNESCO）列入人类非物质文化遗产代表作名录。"
+        }
+      ]
+    },
+    "ru": {
+      "items": [
+        {
+          "id": "rama1",
+          "order": 1,
+          "era": "Эпоха Рамы I",
+          "label": "Трактат «Рок Нитхан Кхам Чан 11»",
+          "detail": "Эпоха Рамы I (1782–1809) — стихотворный медицинский трактат традиционной тайской медицины."
+        },
+        {
+          "id": "rama2",
+          "order": 2,
+          "era": "Эпоха Рамы II",
+          "label": "Надписи в храме Ват Ратчаорасарам",
+          "detail": "Эпоха Рамы II (1809–1824) — каменные надписи с медицинскими рецептами в храме Ват Ратчаорасарам."
+        },
+        {
+          "id": "rama3",
+          "order": 3,
+          "era": "Эпоха Рамы III",
+          "label": "Каменные надписи схем массажа в Ват Пхо",
+          "detail": "Эпоха Рамы III (1824–1851) — каменные надписи руководства по схемам массажа в храме Ват Пхо."
+        },
+        {
+          "id": "rama5",
+          "order": 4,
+          "era": "Эпоха Рамы V",
+          "label": "Королевский трактат (29 схем массажа)",
+          "detail": "Эпоха Рамы V (1868–1910) — королевский медицинский трактат с 29 иллюстрациями (21 на спине, 8 на животе)."
+        },
+        {
+          "id": "unesco",
+          "order": 5,
+          "era": "12 декабря 2019 года",
+          "label": "Включение «нуад тай» в список ЮНЕСКО",
+          "detail": "12 декабря 2019 года — традиционный тайский массаж внесён в Репрезентативный список ЮНЕСКО."
+        }
+      ]
+    },
+    "hi": {
+      "items": [
+        {
+          "id": "rama1",
+          "order": 1,
+          "era": "राजा राम प्रथम का काल",
+          "label": "चिकित्सा ग्रंथ ‘तमरा रोक निथान खाम छान 11’",
+          "detail": "राजा राम प्रथम का काल (1782–1809) — पद्यात्मक पारंपरिक थाई चिकित्सा ग्रंथ।"
+        },
+        {
+          "id": "rama2",
+          "order": 2,
+          "era": "राजा राम द्वितीय का काल",
+          "label": "वाट रत्चाओरासाराम औषधीय शिलालेख",
+          "detail": "राजा राम द्वितीय का काल (1809–1824) — वाट रत्चाओरासाराम मंदिर में उत्कीर्ण औषधीय ग्रंथ शिलालेख।"
+        },
+        {
+          "id": "rama3",
+          "order": 3,
+          "era": "राजा राम तृतीय का काल",
+          "label": "वाट फो मालिश-विधि शिलालेख",
+          "detail": "राजा राम तृतीय का काल (1824–1851) — वाट फ्रा चेतुफोन (वाट फो) में उत्कीर्ण मालिश-विधि के शिलालेख।"
+        },
+        {
+          "id": "rama5",
+          "order": 4,
+          "era": "राजा राम पंचम का काल",
+          "label": "शाही चिकित्सा ग्रंथ (29 मालिश चित्र)",
+          "detail": "राजा राम पंचम का काल (1868–1910) — शाही चिकित्सा ग्रंथ में 29 चित्र (21 पीठ के बल, 8 पेट के बल)।"
+        },
+        {
+          "id": "unesco",
+          "order": 5,
+          "era": "12 दिसंबर 2019",
+          "label": "नुआद थाई यूनेस्को सूची में दर्ज",
+          "detail": "12 दिसंबर 2019 — पारंपरिक थाई मालिश को यूनेस्को की अमूर्त सांस्कृतिक विरासत सूची में शामिल किया गया।"
+        }
+      ]
+    },
+    "ms": {
+      "items": [
+        {
+          "id": "rama1",
+          "order": 1,
+          "era": "Zaman Raja Rama I",
+          "label": "Teks perubatan “Rok Nithan Kham Chan 11”",
+          "detail": "Zaman Raja Rama I (1782–1809) — Teks perubatan tradisional Thai berbentuk puisi."
+        },
+        {
+          "id": "rama2",
+          "order": 2,
+          "era": "Zaman Raja Rama II",
+          "label": "Prasasti resipi ubat Wat Ratcha-orasaram",
+          "detail": "Zaman Raja Rama II (1809–1824) — Prasasti batu resipi ubat tradisional di Wat Ratcha-orasaram."
+        },
+        {
+          "id": "rama3",
+          "order": 3,
+          "era": "Zaman Raja Rama III",
+          "label": "Prasasti batu kitab urutan Wat Pho",
+          "detail": "Zaman Raja Rama III (1824–1851) — Prasasti batu kitab rajah urutan di Wat Phra Chetuphon (Wat Pho)."
+        },
+        {
+          "id": "rama5",
+          "order": 4,
+          "era": "Zaman Raja Rama V",
+          "label": "Kitab rajah urutan diraja (29 ilustrasi)",
+          "detail": "Zaman Raja Rama V (1868–1910) — Naskhah perubatan diraja dengan 29 ilustrasi (21 telentang, 8 meniarap)."
+        },
+        {
+          "id": "unesco",
+          "order": 5,
+          "era": "12 Disember 2019",
+          "label": "Nuad Thai didaftarkan UNESCO",
+          "detail": "12 Disember 2019 — Urutan tradisional Thai dimasukkan dalam Senarai Warisan Budaya Tidak Ketara UNESCO."
+        }
+      ]
+    },
+    "ko": {
+      "items": [
+        {
+          "id": "rama1",
+          "order": 1,
+          "era": "라마 1세 시대",
+          "label": "운문 의학서 『땀라 록 니탄 캄찬 11』",
+          "detail": "라마 1세 시대(1782–1809) — 운문 형식으로 쓰인 태국 전통 의학서."
+        },
+        {
+          "id": "rama2",
+          "order": 2,
+          "era": "라마 2세 시대",
+          "label": "왓 랏차오롯사람 약학서 비문",
+          "detail": "라마 2세 시대(1809–1824) — 왓 랏차오롯사람 사원에 새겨진 약학 처방 비문."
+        },
+        {
+          "id": "rama3",
+          "order": 3,
+          "era": "라마 3세 시대",
+          "label": "왓 포 마사지 도해 경전 석비",
+          "detail": "라마 3세 시대(1824–1851) — 왓 프라체뚜폰(왓 포)에 새겨진 마사지 도해 경전 석비."
+        },
+        {
+          "id": "rama5",
+          "order": 4,
+          "era": "라마 5세 시대",
+          "label": "왕실 의학서 마사지 도해집 (29개 그림)",
+          "detail": "라마 5세 시대(1868–1910) — 바로 누운 자세 21개, 엎드린 자세 8개 총 29개 도해를 담은 왕실 의학서."
+        },
+        {
+          "id": "unesco",
+          "order": 5,
+          "era": "2019년 12월 12일",
+          "label": "누앗 타이 유네스코(UNESCO) 등재",
+          "detail": "2019년 12월 12일 — 태국 전통 마사지가 유네스코 인류무형문화유산 대표목록에 등재되었습니다."
+        }
+      ]
+    }
+  }
+}

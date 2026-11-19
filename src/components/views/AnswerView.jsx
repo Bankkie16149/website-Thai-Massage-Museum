@@ -1,5 +1,5 @@
-import React from 'react';
-import { COPY } from '../../data/copyData';
+import React, { useEffect, useState } from 'react';
+import { triggerRipple } from '../../utils/ripple';
 
 export default function AnswerView({
   locale,
@@ -11,72 +11,123 @@ export default function AnswerView({
   media,
   visited,
   isExpanded,
+  fontScale,
   answerTitleRef,
   onBack,
   onToggleExpand,
+  onToggleFontScale,
   onNextQuestion,
   onGoGames,
 }) {
   const g = groups[topic];
-  const copyLang = locale === 'th' || locale === 'en' ? locale : 'en';
-  const questionTitle = (i) => t.questions[i] || COPY.en.questions[i];
+  const gallery = g.gallery;
+  const [photoIndex, setPhotoIndex] = useState(0);
 
-  const headingText = (() => {
-    if (locale === 'th' || locale === 'en') {
-      return t.shortTitles[topic];
-    }
-    const raw = paras[g.headingIndex] || '';
-    const chars = Array.from(raw);
-    return chars.length > 68 ? chars.slice(0, 68).join('') + '…' : raw;
-  })();
+  useEffect(() => {
+    setPhotoIndex(0);
+  }, [topic]);
 
-  const imgId = g.gallery[0];
+  const activeImgId = gallery[photoIndex] ?? gallery[0];
+
+  const handlePrevPhoto = () => {
+    setPhotoIndex((idx) => (idx - 1 + gallery.length) % gallery.length);
+  };
+
+  const handleNextPhoto = () => {
+    setPhotoIndex((idx) => (idx + 1) % gallery.length);
+  };
 
   return (
     <section
       id="view-answer"
-      className="answer pt-[35px] max-[650px]:pt-[10px]"
+      className="answer pt-[32px] max-[650px]:pt-[10px]"
       aria-labelledby="answer-title"
     >
-      <button
-        type="button"
-        id="answer-back"
-        onClick={onBack}
-        className="border border-[#ffffff50] text-[#f2e9d7] bg-transparent hover:bg-[#ffffff13] rounded-[13px] min-h-[45px] py-[7px] px-[15px] font-extrabold"
-      >
-        ← <span lang={copyLang}>{t.allQuestions}</span>
-      </button>
+      <div className="flex flex-wrap items-center justify-between gap-3 select-none">
+        <button
+          type="button"
+          id="answer-back"
+          onPointerDown={triggerRipple}
+          onClick={onBack}
+          className="relative overflow-hidden border border-[#e6c17777] text-[#fff8ee] bg-[#4e141c55] hover:bg-[#6a1b2688] active:scale-[0.96] rounded-[15px] min-h-[54px] py-[10px] px-[20px] font-extrabold transition-transform"
+        >
+          ← <span lang={locale}>{t.allQuestions}</span>
+        </button>
 
-      <div className="grid grid-cols-[minmax(0,1.13fr)_minmax(330px,0.87fr)] max-[1130px]:gap-[25px] max-[760px]:grid-cols-1 max-[760px]:gap-5 gap-[46px] items-start pt-[30px] max-[760px]:pt-[13px] pb-[10px]">
+        {/* Kiosk Text Size Toggle */}
+        <div className="flex items-center gap-2 bg-[#190609aa] border border-[#e6c17745] rounded-[16px] p-1.5">
+          <span className="text-[0.76rem] font-bold text-[#e6d2c7] px-2 max-[500px]:hidden" lang={locale}>
+            {t.textSizeLabel}
+          </span>
+          <button
+            type="button"
+            onClick={() => onToggleFontScale('normal')}
+            aria-pressed={fontScale === 'normal' ? 'true' : 'false'}
+            className={`min-h-[44px] px-3.5 rounded-[12px] text-[0.86rem] font-extrabold transition-colors ${
+              fontScale === 'normal'
+                ? 'bg-[#e6c177] text-[#2b0a0f]'
+                : 'bg-transparent text-[#f7efe2] hover:bg-[#ffffff14]'
+            }`}
+          >
+            {t.textNormal}
+          </button>
+          <button
+            type="button"
+            onClick={() => onToggleFontScale('large')}
+            aria-pressed={fontScale === 'large' ? 'true' : 'false'}
+            className={`min-h-[44px] px-3.5 rounded-[12px] text-[0.94rem] font-extrabold transition-colors ${
+              fontScale === 'large'
+                ? 'bg-[#e6c177] text-[#2b0a0f]'
+                : 'bg-transparent text-[#f7efe2] hover:bg-[#ffffff14]'
+            }`}
+          >
+            {t.textLarge}
+          </button>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-[minmax(0,1.13fr)_minmax(330px,0.87fr)] max-[1130px]:gap-[25px] max-[760px]:grid-cols-1 max-[760px]:gap-6 gap-[46px] items-start pt-[28px] max-[760px]:pt-[14px] pb-[10px]">
         <div>
-          <div className="overline" id="answer-overline">
-            DISCOVERY / {String(topic + 1).padStart(2, '0')} — 06
+          <div className="overline" id="answer-overline" lang={locale}>
+            {t.discoveryPrefix} / {String(topic + 1).padStart(2, '0')} — 06
           </div>
 
-          <p className="text-[#e7ce9f] text-[1.02rem] font-extrabold leading-[1.6] mt-[17px]" id="answer-question">
-            {questionTitle(topic)}
+          <p
+            className="text-[#ecc37b] text-[1.06rem] font-extrabold leading-[1.6] mt-[15px]"
+            id="answer-question"
+            lang={locale}
+          >
+            {t.questions[topic]}
           </p>
 
           <h2
             ref={answerTitleRef}
             id="answer-title"
             tabIndex={-1}
-            className="mt-[22px] mb-[25px] max-[760px]:text-[2rem] max-[760px]:my-4 font-bold"
+            lang={locale}
+            className="mt-[18px] mb-[22px] max-[760px]:text-[2rem] max-[760px]:my-4 font-bold text-[#fffaf0]"
           >
-            {headingText}
+            {t.shortTitles[topic]}
           </h2>
 
           <div
-            className="mt-5 bg-[#f9f1df] rounded-[28px] p-[clamp(24px,3.3vw,44px)] max-[760px]:p-[22px] text-[#223b32] shadow-museum"
+            className="mt-5 bg-[#faf1e3] rounded-[28px] p-[clamp(24px,3.3vw,44px)] max-[760px]:p-[22px] text-[#2d1014] shadow-museum"
             id="answer-text"
             aria-live="polite"
+            lang={locale}
           >
             {g.readingIndexes.map((n, j) => {
               if (j > 0 && !isExpanded) return null;
               return (
                 <p
                   key={n}
-                  className="text-[clamp(.99rem,1.2vw,1.1rem)] leading-[1.94] mb-[15px] last:mb-0 whitespace-pre-wrap"
+                  className={`${
+                    j > 0 ? 'passage-reveal ' : ''
+                  }${
+                    fontScale === 'large'
+                      ? 'text-[clamp(1.18rem,1.45vw,1.35rem)] leading-[1.95]'
+                      : 'text-[clamp(1.01rem,1.22vw,1.14rem)] leading-[1.92]'
+                  } mb-[16px] last:mb-0 whitespace-pre-wrap transition-[font-size] duration-200`}
                 >
                   {paras[n]}
                 </p>
@@ -86,52 +137,51 @@ export default function AnswerView({
             {g.readingIndexes.length > 1 && (
               <button
                 type="button"
+                onPointerDown={triggerRipple}
                 onClick={onToggleExpand}
                 aria-expanded={isExpanded ? 'true' : 'false'}
-                className="mt-[5px] mb-[14px] min-h-[59px] max-[650px]:min-h-[60px] w-full border-2 border-[#9caa8d] rounded-[15px] bg-[#e5ead9] hover:bg-[#d3dfc6] text-[#204a3d] py-[12px] px-[18px] text-[1rem] max-[650px]:text-[1.06rem] font-black transition-colors focus-visible:outline-[#1e5547]"
+                className="relative overflow-hidden mt-[6px] mb-[16px] min-h-[62px] w-full border-2 border-[#b57c70] rounded-[16px] bg-[#f2e2d4] hover:bg-[#ead2be] active:scale-[0.98] text-[#59151d] py-[12px] px-[18px] text-[1.04rem] font-black transition-all select-none focus-visible:outline-[#63161f]"
               >
                 {isExpanded ? t.readLess : t.readMore}
               </button>
             )}
 
-            <p
-              className="border-t border-[#ddd3bd] pt-[14px] mt-5 text-[0.77rem] text-[#455f52]"
-              lang={locale === 'th' ? 'th' : 'en'}
-            >
-              {source.sourceFilename} ·{' '}
-              {locale === 'th' ? 'ข้อความจากเอกสารต้นฉบับ' : 'Original text from provided document'}
+            <p className="border-t border-[#e0cdb8] pt-[14px] mt-5 text-[0.8rem] text-[#662931]" lang={locale}>
+              {source.sourceFilename} · {t.originalTextNote}
             </p>
           </div>
 
-          <div className="mt-[22px] flex gap-[10px] flex-wrap">
+          <div className="mt-[22px] flex gap-[12px] flex-wrap select-none">
             <button
               type="button"
               id="next-question"
+              onPointerDown={triggerRipple}
               onClick={onNextQuestion}
-              className="min-h-[61px] max-[650px]:min-h-[54px] rounded-[18px] max-[650px]:rounded-[14px] py-[11px] px-[25px] max-[650px]:py-[10px] max-[650px]:px-[14px] text-[0.96rem] max-[650px]:text-[0.84rem] font-extrabold inline-flex gap-[10px] items-center justify-center bg-[#e6c177] hover:bg-[#f0d69d] text-[#20392f] transition-transform hover:-translate-y-0.5"
+              className="relative overflow-hidden min-h-[64px] max-[650px]:min-h-[56px] rounded-[18px] max-[650px]:rounded-[14px] py-[12px] px-[26px] text-[1rem] max-[650px]:text-[0.88rem] font-extrabold inline-flex gap-[10px] items-center justify-center bg-[#e6c177] hover:bg-[#f0d69d] active:scale-[0.96] text-[#2b0a0f] transition-transform"
             >
-              <span lang={copyLang}>{t.nextQuestion}</span> →
+              <span lang={locale}>{t.nextQuestion}</span> →
             </button>
 
             <button
               type="button"
+              onPointerDown={triggerRipple}
               onClick={onGoGames}
-              className="min-h-[61px] max-[650px]:min-h-[54px] rounded-[18px] max-[650px]:rounded-[14px] py-[11px] px-[25px] max-[650px]:py-[10px] max-[650px]:px-[14px] text-[0.96rem] max-[650px]:text-[0.84rem] font-extrabold inline-flex gap-[10px] items-center justify-center bg-transparent hover:bg-[#ffffff13] text-[#f7f1e5] border border-[#e6e1cc63] transition-transform hover:-translate-y-0.5"
+              className="relative overflow-hidden min-h-[64px] max-[650px]:min-h-[56px] rounded-[18px] max-[650px]:rounded-[14px] py-[12px] px-[26px] text-[1rem] max-[650px]:text-[0.88rem] font-extrabold inline-flex gap-[10px] items-center justify-center bg-[#4e141c55] hover:bg-[#6a1b2688] active:scale-[0.96] text-[#fff8ee] border border-[#e6c17766] transition-transform"
             >
-              <span lang={copyLang}>{t.games}</span> ↗
+              <span lang={locale}>{t.games}</span> ↗
             </button>
           </div>
 
-          <div className="flex justify-between items-center mt-[25px] gap-3 border-t border-[var(--stroke)] pt-[18px] text-[#e3d7bc] text-[0.86rem]">
-            <span id="answer-count">
+          <div className="flex justify-between items-center mt-[25px] gap-3 border-t border-[var(--stroke)] pt-[18px] text-[#f0decb] text-[0.88rem] select-none">
+            <span id="answer-count" lang={locale}>
               {visited.size} / 6 {t.discovered}
             </span>
-            <div className="flex gap-[7px]" id="discovery-dots" aria-hidden="true">
+            <div className="flex gap-[8px]" id="discovery-dots" aria-hidden="true">
               {groups.map((_, n) => (
                 <i
                   key={n}
-                  className={`block w-[13px] h-[13px] border border-[#e5dcbb8c] rounded-full ${
-                    visited.has(n) ? 'bg-[#e2be7d]' : 'bg-transparent'
+                  className={`block w-[14px] h-[14px] border border-[#e6c17799] rounded-full ${
+                    visited.has(n) ? 'bg-[#e6c177]' : 'bg-transparent'
                   }`}
                 />
               ))}
@@ -139,18 +189,77 @@ export default function AnswerView({
           </div>
         </div>
 
-        <div className="sticky top-[22px] max-[760px]:static">
-          <div className="rounded-[28px] overflow-hidden border-[9px] border-[#d1be8e] h-[min(62vh,560px)] min-h-[360px] max-[760px]:h-[260px] max-[760px]:min-h-0 max-[760px]:max-w-[520px] bg-[#5b685c]">
+        {/* Exhibition Gallery Frame (supports all photos in g.gallery) */}
+        <div className="sticky top-[22px] max-[760px]:static select-none">
+          <div className="rounded-[28px] overflow-hidden border-[8px] border-[#d8b67b] h-[min(58vh,520px)] min-h-[340px] max-[760px]:h-[290px] max-[760px]:min-h-0 max-[760px]:max-w-[540px] bg-[#3a1016] relative">
             <img
+              key={activeImgId}
               id="answer-image"
-              src={media[String(imgId)].large}
-              alt={(locale === 'th' ? 'ภาพหมายเลข ' : 'Source document image ') + imgId}
+              src={media[String(activeImgId)].large}
+              alt={`${t.imageLabel} ${activeImgId}`}
               decoding="async"
-              className="w-full h-full object-cover object-center"
+              className="gallery-photo-enter w-full h-full object-cover object-center"
             />
+
+            {gallery.length > 1 && (
+              <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-2">
+                <button
+                  type="button"
+                  onClick={handlePrevPhoto}
+                  aria-label={t.prevPhoto}
+                  className="min-w-[52px] min-h-[52px] rounded-full bg-[#190609cc] hover:bg-[#63161f] active:scale-[0.94] text-[#fff8ee] border border-[#e6c17780] grid place-items-center text-[1.35rem] backdrop-blur-sm transition-transform"
+                >
+                  ‹
+                </button>
+                <span
+                  className="py-1.5 px-4 rounded-full bg-[#190609cc] text-[#f7ebd4] text-[0.82rem] font-extrabold border border-[#e6c17755] backdrop-blur-sm"
+                  lang={locale}
+                >
+                  {t.photoOf} {photoIndex + 1} / {gallery.length}
+                </span>
+                <button
+                  type="button"
+                  onClick={handleNextPhoto}
+                  aria-label={t.nextPhoto}
+                  className="min-w-[52px] min-h-[52px] rounded-full bg-[#190609cc] hover:bg-[#63161f] active:scale-[0.94] text-[#fff8ee] border border-[#e6c17780] grid place-items-center text-[1.35rem] backdrop-blur-sm transition-transform"
+                >
+                  ›
+                </button>
+              </div>
+            )}
           </div>
-          <p className="text-[#c8d4c9] text-[0.76rem] mt-[13px]" id="image-source-note">
-            {t.sourceNote} · #{imgId}
+
+          {gallery.length > 1 && (
+            <div className="flex gap-2.5 mt-3 overflow-x-auto pb-1" role="group" aria-label={t.imageLabel}>
+              {gallery.map((imgId, idx) => {
+                const active = idx === photoIndex;
+                return (
+                  <button
+                    key={imgId}
+                    type="button"
+                    onClick={() => setPhotoIndex(idx)}
+                    aria-label={`${t.photoOf} ${idx + 1}`}
+                    aria-pressed={active ? 'true' : 'false'}
+                    className={`w-[72px] h-[58px] rounded-[12px] overflow-hidden border-2 shrink-0 transition-transform active:scale-[0.96] ${
+                      active
+                        ? 'border-[#e6c177] ring-2 ring-[#e6c17755]'
+                        : 'border-[#ffffff33] opacity-70 hover:opacity-100'
+                    }`}
+                  >
+                    <img
+                      src={media[String(imgId)].small}
+                      alt=""
+                      className="w-full h-full object-cover"
+                      decoding="async"
+                    />
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
+          <p className="text-[#e6d2c7] text-[0.78rem] mt-[12px]" id="image-source-note" lang={locale}>
+            {t.sourceNote} · #{activeImgId}
           </p>
         </div>
       </div>
