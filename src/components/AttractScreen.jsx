@@ -152,6 +152,15 @@ export default function AttractScreen({
           })}
         </div>
       </div>
+
+      {/* Subtle Museum License / Attribution */}
+      <p
+        className="max-w-[1440px] w-full mx-auto text-center text-[#dfc6bd] text-[0.75rem] tracking-[0.05em] pt-3 relative z-[1] flex items-center justify-center gap-2 flex-wrap opacity-90"
+        lang={locale}
+      >
+        <span className="text-[#e6c177]" aria-hidden="true">❖</span>
+        <span>{t.footerNote}</span>
+      </p>
     </div>
   );
 }

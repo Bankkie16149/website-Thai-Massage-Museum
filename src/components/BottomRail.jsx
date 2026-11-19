@@ -56,11 +56,12 @@ export default function BottomRail({ mode, locale, t, onNavigate, onOpenExhibit 
       </nav>
 
       <p
-        className="text-[#c5a89f] text-[0.66rem] max-[650px]:text-[0.58rem] text-center pt-[16px] max-[650px]:pb-2"
+        className="text-[#dfc6bd] text-[0.74rem] max-[650px]:text-[0.64rem] text-center pt-[18px] max-[650px]:pb-2 tracking-[0.04em] flex items-center justify-center gap-2 flex-wrap"
         id="small-footer"
         lang={locale}
       >
-        {t.footerNote}
+        <span className="text-[#e6c177]" aria-hidden="true">❖</span>
+        <span>{t.footerNote}</span>
       </p>
     </div>
   );

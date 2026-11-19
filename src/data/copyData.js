@@ -121,7 +121,7 @@ export const COPY = {
     // Bottom Rail
     discover: 'สำรวจคำถาม',
     learnMore: 'รู้จักนิทรรศการ',
-    footerNote: 'หน้าจอ KIOSK นิทรรศการพิพิธภัณฑ์นวดไทย · เนื้อหาจากเอกสารต้นฉบับ 7 ภาษา',
+    footerNote: '© 2569 สร้างโดย กลุ่มพิพิธภัณฑ์นวดไทย · เผยแพร่เพื่อการเรียนรู้นิทรรศการพิพิธภัณฑ์',
     questions: [
       'พิพิธภัณฑ์อยู่ที่ไหน?',
       'ทำไมนวดไทยจึงอยู่ในรายชื่อ UNESCO?',
@@ -250,7 +250,7 @@ export const COPY = {
     relatedReading: 'Read related topic ↗',
     discover: 'Explore questions',
     learnMore: 'See the exhibits',
-    footerNote: 'MUSEUM KIOSK EDITION · CONTENT FROM PROVIDED 7-LANGUAGE DOCUMENTS',
+    footerNote: '© 2026 Created by Thai Massage Museum Group · Licensed for Museum Exhibition',
     questions: [
       'Where is the museum?',
       'Why is Thai massage on the UNESCO list?',
@@ -379,7 +379,7 @@ export const COPY = {
     relatedReading: '阅读相关主题 ↗',
     discover: '探索问题',
     learnMore: '参观展区介绍',
-    footerNote: '博物馆触控导览屏版本 · 内容源自 7 种语言原始文献',
+    footerNote: '© 2026 由 泰式按摩博物馆团队（Thai Massage Museum Group）制作 · 博物馆展览专用许可',
     questions: [
       '博物馆在哪里？',
       '为什么泰式按摩入选 UNESCO 名录？',
@@ -508,7 +508,7 @@ export const COPY = {
     relatedReading: 'Читать по теме ↗',
     discover: 'Вопросы',
     learnMore: 'Об экспозиции',
-    footerNote: 'МУЗЕЙНЫЙ КИОСК · МАТЕРИАЛЫ НА 7 ЯЗЫКАХ',
+    footerNote: '© 2026 Создано группой Музея тайского массажа (Thai Massage Museum Group) · Лицензия для музейной экспозиции',
     questions: [
       'Где находится музей?',
       'Почему тайский массаж внесён в список ЮНЕСКО?',
@@ -637,7 +637,7 @@ export const COPY = {
     relatedReading: 'संबंधित विषय पढ़ें ↗',
     discover: 'प्रश्न खोजें',
     learnMore: 'प्रदर्शनी देखें',
-    footerNote: 'संग्रहालय कियोस्क संस्करण · 7 भाषाओं के मूल दस्तावेज़ों पर आधारित',
+    footerNote: '© 2026 थाई मालिश संग्रहालय समूह (Thai Massage Museum Group) द्वारा निर्मित · संग्रहालय प्रदर्शनी लाइसेंस',
     questions: [
       'संग्रहालय कहाँ स्थित है?',
       'थाई मालिश यूनेस्को सूची में क्यों है?',
@@ -766,7 +766,7 @@ export const COPY = {
     relatedReading: 'Baca topik berkaitan ↗',
     discover: 'Teroka soalan',
     learnMore: 'Lihat pameran',
-    footerNote: 'EDISI KIOSK MUZIUM · KANDUNGAN DARIPADA DOKUMEN ASAL 7 BAHASA',
+    footerNote: '© 2026 Dicipta oleh Kumpulan Muzium Urutan Thai (Thai Massage Museum Group) · Lesen Pameran Muzium',
     questions: [
       'Di manakah lokasi muzium ini?',
       'Mengapakah urutan Thai tersenarai di UNESCO?',
@@ -895,7 +895,7 @@ export const COPY = {
     relatedReading: '관련 내용 읽기 ↗',
     discover: '질문 탐색',
     learnMore: '전시 더 보기',
-    footerNote: '박물관 키오스크 에디션 · 7개 언어 원문 자료 수록',
+    footerNote: '© 2026 태국 전통 마사지 박물관 그룹(Thai Massage Museum Group) 제작 · 박물관 전시 전용 라이선스',
     questions: [
       '박물관은 어디에 있나요?',
       '태국 마사지는 왜 유네스코에 등재되었나요?',
