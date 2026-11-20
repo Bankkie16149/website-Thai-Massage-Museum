@@ -81,7 +81,7 @@ export default function TopHeader({
               aria-haspopup="dialog"
               aria-controls="language-dialog"
               aria-label={`${t.chooseLangAria}: ${selected[3]}`}
-              className="relative overflow-hidden min-h-[60px] max-[650px]:min-h-[52px] rounded-[18px] max-[650px]:rounded-[13px] py-[8px] px-[15px] max-[650px]:py-[6px] max-[650px]:px-[9px] bg-[#f7ebd1] hover:bg-[#fff6e3] active:scale-[0.96] border-2 border-[#e4c37d] text-[#2d1014] flex gap-[11px] max-[650px]:gap-[7px] items-center shadow-[inset_0_0_0_3px_#fff9e3] transition-transform"
+              className="relative overflow-hidden shrink-0 min-h-[60px] max-[650px]:min-h-[52px] rounded-[18px] max-[650px]:rounded-[13px] py-[8px] px-[15px] max-[650px]:py-[6px] max-[650px]:px-[9px] bg-[#f7ebd1] hover:bg-[#fff6e3] active:scale-[0.96] border-2 border-[#e4c37d] text-[#2d1014] flex gap-[11px] max-[650px]:gap-[7px] items-center shadow-[inset_0_0_0_3px_#fff9e3] transition-transform"
             >
               <span
                 className="text-[1.75rem] max-[650px]:text-[1.25rem] font-serif border-r border-[#c2ab8c] pr-[11px] max-[650px]:pr-[6px]"
@@ -111,7 +111,7 @@ export default function TopHeader({
             id="restart"
             onPointerDown={triggerRipple}
             onClick={onGoHome}
-            className="relative overflow-hidden min-h-[58px] max-[650px]:min-h-[50px] bg-[#4e141c] hover:bg-[#681c26] active:scale-[0.96] text-[#fdf6e6] border border-[#b88672] rounded-[16px] max-[650px]:rounded-[13px] py-[10px] px-[18px] max-[650px]:py-[7px] max-[650px]:px-[10px] max-[650px]:text-[0.74rem] font-extrabold transition-transform"
+            className="relative overflow-hidden whitespace-nowrap shrink-0 min-h-[58px] max-[650px]:min-h-[50px] bg-[#4e141c] hover:bg-[#681c26] active:scale-[0.96] text-[#fdf6e6] border border-[#b88672] rounded-[16px] max-[650px]:rounded-[13px] py-[10px] px-[18px] max-[650px]:py-[7px] max-[650px]:px-[10px] max-[650px]:text-[0.74rem] font-extrabold transition-transform"
           >
             ⌂ <span lang={locale}>{t.home}</span>
           </button>
@@ -123,7 +123,7 @@ export default function TopHeader({
             onClick={onResetSession}
             title={t.resetSession}
             aria-label={t.resetSession}
-            className="relative overflow-hidden min-h-[58px] max-[650px]:min-h-[50px] bg-transparent hover:bg-[#ffffff14] active:scale-[0.96] text-[#f0d8b2] border border-[#e6c17755] rounded-[16px] max-[650px]:rounded-[13px] py-[10px] px-[14px] max-[650px]:py-[7px] max-[650px]:px-[9px] text-[0.84rem] max-[650px]:text-[0.72rem] font-extrabold transition-transform"
+            className="relative overflow-hidden whitespace-nowrap shrink-0 min-h-[58px] max-[650px]:min-h-[50px] bg-transparent hover:bg-[#ffffff14] active:scale-[0.96] text-[#f0d8b2] border border-[#e6c17755] rounded-[16px] max-[650px]:rounded-[13px] py-[10px] px-[14px] max-[650px]:py-[7px] max-[650px]:px-[9px] text-[0.84rem] max-[650px]:text-[0.72rem] font-extrabold transition-transform"
           >
             ↺ <span className="max-[820px]:hidden" lang={locale}>{t.resetSession}</span>
           </button>

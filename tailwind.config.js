@@ -1,4 +1,18 @@
 /** @type {import('tailwindcss').Config} */
+const MONTSERRAT_STACK = [
+  "'Montserrat Variable'",
+  "'Montserrat'",
+  "'Noto Sans Thai Variable'",
+  "'Noto Sans Thai'",
+  "'Noto Sans SC Variable'",
+  "'Noto Sans KR Variable'",
+  "'Noto Sans Devanagari Variable'",
+  "'Leelawadee UI'",
+  'Tahoma',
+  'Arial',
+  'sans-serif',
+];
+
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -15,8 +29,8 @@ export default {
         muted: '#d8c2ba',
       },
       fontFamily: {
-        sans: ["'Noto Sans Thai'", "'Leelawadee UI'", 'Tahoma', 'Arial', 'sans-serif'],
-        serif: ['Georgia', 'serif'],
+        sans: MONTSERRAT_STACK,
+        serif: MONTSERRAT_STACK,
       },
       boxShadow: {
         museum: '0 24px 70px rgba(18, 4, 6, 0.42)',

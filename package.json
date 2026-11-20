@@ -21,6 +21,11 @@
   },
   "homepage": "https://github.com/Bankkie16149/website-Thai-Massage-Museum#readme",
   "dependencies": {
+    "@fontsource-variable/montserrat": "^5.3.0",
+    "@fontsource-variable/noto-sans-devanagari": "^5.3.0",
+    "@fontsource-variable/noto-sans-kr": "^5.3.1",
+    "@fontsource-variable/noto-sans-sc": "^5.3.1",
+    "@fontsource-variable/noto-sans-thai": "^5.3.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
