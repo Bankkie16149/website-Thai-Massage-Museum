@@ -1,6 +1,7 @@
 import React from 'react';
 import { LANGUAGES } from '../data/copyData';
 import { triggerRipple } from '../utils/ripple';
+import cituLogo from '../assets/citu-logo.jpg';
 
 export default function AttractScreen({
   locale,
@@ -23,20 +24,22 @@ export default function AttractScreen({
         aria-hidden="true"
       />
 
-      {/* Top Museum Crest */}
+      {/* Top Museum & CITU Crest */}
       <div className="flex items-center justify-between gap-4 relative z-[1] flex-wrap">
-        <div className="flex items-center gap-4">
-          <span
-            className="grid place-items-center w-[54px] h-[54px] border-[1.5px] border-[#e6c177] text-[#e6c177] rotate-45 rounded-[12px] font-serif text-[26px]"
-            aria-hidden="true"
-          >
-            ❖
+        <div className="flex items-center gap-4 max-[650px]:gap-3">
+          <span className="inline-flex items-center shrink-0 bg-white rounded-[14px] max-[650px]:rounded-[10px] px-3 py-1.5 max-[650px]:px-2 max-[650px]:py-1 border border-[#e6c17799] shadow-md">
+            <img
+              src={cituLogo}
+              alt="College of Innovation, Thammasat University (CITU)"
+              className="h-[44px] max-[650px]:h-[30px] w-auto object-contain"
+              decoding="async"
+            />
           </span>
-          <div>
-            <p className="text-[0.78rem] tracking-[0.2em] font-black text-[#e6c177] uppercase">
+          <div className="border-l border-[#e6c17740] pl-4 max-[650px]:pl-3">
+            <p className="text-[0.8rem] max-[650px]:text-[0.7rem] tracking-[0.18em] font-black text-[#e6c177] uppercase">
               {t.attractKicker}
             </p>
-            <p className="text-[0.82rem] text-[#e8d9cf] opacity-85">{t.attractHours}</p>
+            <p className="text-[0.82rem] max-[650px]:text-[0.72rem] text-[#e8d9cf] opacity-85">{t.attractHours}</p>
           </div>
         </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { LANGUAGES } from '../data/copyData';
 import { triggerRipple } from '../utils/ripple';
+import cituLogo from '../assets/citu-logo.jpg';
 
 export default function TopHeader({
   locale,
@@ -20,34 +21,39 @@ export default function TopHeader({
       </a>
 
       <header className="bg-[#190609] text-[#f7efe2] border-b border-[#e6c17738] relative z-[4] select-none">
-        <div className="w-[min(1570px,calc(100%-56px))] max-[1100px]:w-[calc(100%-34px)] max-[650px]:w-[calc(100%-22px)] mx-auto flex items-center gap-[18px] max-[650px]:gap-[8px] min-h-[84px] max-[650px]:min-h-[70px] py-2">
-          <div
-            className="flex items-center gap-[13px] max-[650px]:gap-[9px] min-w-0"
+        <div className="w-[min(1570px,calc(100%-56px))] max-[1100px]:w-[calc(100%-34px)] max-[650px]:w-[calc(100%-20px)] mx-auto flex items-center gap-[16px] max-[650px]:gap-[7px] min-h-[84px] max-[650px]:min-h-[68px] py-2">
+          <button
+            type="button"
+            onPointerDown={triggerRipple}
+            onClick={onGoHome}
+            className="relative overflow-hidden flex items-center gap-[14px] max-[650px]:gap-0 min-w-0 text-left rounded-[14px] py-1 pr-2 max-[650px]:pr-0 hover:bg-[#ffffff0a] active:scale-[0.98] transition-transform"
             aria-label={brandTitle}
           >
-            <span
-              className="grid place-items-center w-[49px] h-[49px] max-[650px]:w-[40px] max-[650px]:h-[40px] flex-none border-[1.5px] border-[#e6c177] text-[#e6c177] rotate-45 rounded-[10px] font-serif text-[24px] max-[650px]:text-[19px]"
-              aria-hidden="true"
-            >
-              ❖
+            <span className="inline-flex items-center shrink-0 bg-white rounded-[12px] max-[650px]:rounded-[9px] px-2.5 py-1.5 max-[650px]:px-2 max-[650px]:py-1 border border-[#e6c17799] shadow-sm">
+              <img
+                src={cituLogo}
+                alt="College of Innovation, Thammasat University (CITU)"
+                className="h-[38px] max-[650px]:h-[26px] w-auto object-contain"
+                decoding="async"
+              />
             </span>
-            <div className="min-w-0">
+            <div className="min-w-0 border-l border-[#e6c17740] pl-[14px] max-[650px]:hidden">
               <strong
                 id="brand-source"
                 lang={locale}
-                className="text-[1rem] max-[650px]:text-[0.8rem] leading-[1.3] block text-[#fff8ee] max-[650px]:line-clamp-2"
+                className="text-[1rem] leading-[1.28] block text-[#fff8ee]"
               >
                 {brandTitle}
               </strong>
-              <small className="text-[0.64rem] max-[650px]:text-[0.52rem] tracking-[0.17em] max-[650px]:tracking-[0.06em] font-extrabold block text-[#d9b26f]">
+              <small className="text-[0.64rem] tracking-[0.17em] font-extrabold block text-[#d9b26f]">
                 {t.kioskSubtitle}
               </small>
             </div>
-          </div>
+          </button>
 
           <div className="flex-1" />
 
-          <div className="inline-flex gap-[9px] items-center text-[0.74rem] tracking-[0.14em] font-black text-[#eddcd4] whitespace-nowrap max-[1220px]:hidden">
+          <div className="inline-flex gap-[9px] items-center text-[0.74rem] tracking-[0.14em] font-black text-[#eddcd4] whitespace-nowrap max-[1360px]:hidden">
             <i
               className="w-2.5 h-2.5 rounded-full bg-[#e6c177] shadow-[0_0_0_4px_#e6c17733]"
               aria-hidden="true"
@@ -123,7 +129,7 @@ export default function TopHeader({
             onClick={onResetSession}
             title={t.resetSession}
             aria-label={t.resetSession}
-            className="relative overflow-hidden whitespace-nowrap shrink-0 min-h-[58px] max-[650px]:min-h-[50px] bg-transparent hover:bg-[#ffffff14] active:scale-[0.96] text-[#f0d8b2] border border-[#e6c17755] rounded-[16px] max-[650px]:rounded-[13px] py-[10px] px-[14px] max-[650px]:py-[7px] max-[650px]:px-[9px] text-[0.84rem] max-[650px]:text-[0.72rem] font-extrabold transition-transform"
+            className="relative overflow-hidden whitespace-nowrap shrink-0 inline-flex items-center justify-center gap-1 min-w-[46px] min-h-[58px] max-[650px]:min-h-[50px] bg-transparent hover:bg-[#ffffff14] active:scale-[0.96] text-[#f0d8b2] border border-[#e6c17755] rounded-[16px] max-[650px]:rounded-[13px] py-[10px] px-[14px] max-[650px]:p-0 text-[0.84rem] max-[650px]:text-[0.92rem] font-extrabold transition-transform"
           >
             ↺ <span className="max-[820px]:hidden" lang={locale}>{t.resetSession}</span>
           </button>
